@@ -43,7 +43,7 @@ const Sidebar = ({ isVisible, onClose, onChange, activeScreen }) => {
       deviceWidth={responsive.window.width}
       deviceHeight={responsive.window.height}
       hideModalContentWhileAnimating={true}
-      useNativeDriver={true}
+      useNativeDriver
       backdropTransitionOutTiming={0}
       statusBarTranslucent={false}
       onBackdropPress={onClose}

@@ -129,41 +129,34 @@ const DoctorListings = () => {
             onChangeText={setSearch}
           />
         </View>
-      </View>
-      {/* 
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.specialtyContainer}
-      >
-        {specialties.map((specialty) => (
+        <View style={styles.filterRow}>
           <TouchableOpacity
-            key={specialty}
-            style={[
-              styles.specialtyChip,
-              selectedSpecialty === specialty && styles.selectedSpecialty,
-            ]}
-            onPress={() =>
-              setSelectedSpecialty(
-                selectedSpecialty === specialty ? null : specialty
-              )
-            }
+            style={styles.filterButton}
+            onPress={() => setShowFilters(true)}
           >
-            <Text
-              style={[
-                styles.specialtyText,
-                selectedSpecialty === specialty && styles.selectedSpecialtyText,
-              ]}
-            >
-              {specialty}
+            <Feather
+              name="sliders"
+              size={responsive.wp(5)}
+              color={colors.text}
+            />
+            <Text style={styles.filterButtonText}>
+              {sortOptions.find((opt) => opt.id === sortBy)?.label ||
+                "Filters & Sort"}
             </Text>
+            {activeFilters.length > 0 && (
+              <View style={styles.filterBadge}>
+                <Text style={styles.filterBadgeText}>
+                  {activeFilters.length}
+                </Text>
+              </View>
+            )}
           </TouchableOpacity>
-        ))}
-      </ScrollView> */}
+        </View>
+      </View>
 
       <ScrollView
         style={styles.doctorList}
-        contentContainerStyle={{ paddingBottom: responsive.hp(20) }}
+        contentContainerStyle={{ paddingBottom: responsive.hp(4) }}
         showsVerticalScrollIndicator={false}
       >
         {getSortedDoctors(filteredDoctors).map((doctor) => (
@@ -182,34 +175,13 @@ const DoctorListings = () => {
         ))}
       </ScrollView>
 
-      <View style={styles.bottomActions}>
-        <TouchableOpacity
-          style={styles.actionTab}
-          onPress={() => setShowFilters(true)}
-        >
-          <Feather name="filter" size={responsive.wp(5)} color={colors.text} />
-          <Text style={styles.actionText}>Filter</Text>
-        </TouchableOpacity>
-
-        <View style={styles.actionDivider} />
-
-        <TouchableOpacity
-          style={styles.actionTab}
-          onPress={() => setShowFilters(true)}
-        >
-          <Feather
-            name="bar-chart-2"
-            size={responsive.wp(5)}
-            color={colors.text}
-          />
-          <Text style={styles.actionText}>Sort</Text>
-        </TouchableOpacity>
-      </View>
-
       <ReactNativeModal
         isVisible={showFilters}
         onBackdropPress={() => setShowFilters(false)}
         style={styles.filterModal}
+        backdropTransitionOutTiming={0} // Add this to fix flash
+        animationOutTiming={300} // Optional: adjust animation speed
+        useNativeDriver // Add this for better performance
       >
         <View style={styles.filterContent}>
           <View style={styles.filterHeader}>
@@ -313,6 +285,7 @@ const styles = StyleSheet.create({
   header: {
     padding: responsive.wp(4),
     backgroundColor: colors.surface,
+    gap: responsive.hp(2),
   },
   searchBox: {
     flexDirection: "row",
@@ -326,6 +299,39 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: responsive.wp(3.5),
     color: colors.text,
+  },
+  filterRow: {
+    flexDirection: "row",
+  },
+  filterButton: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.background,
+    padding: responsive.hp(1.5),
+    borderRadius: responsive.wp(2),
+    gap: responsive.wp(2),
+  },
+  filterButtonText: {
+    fontSize: responsive.wp(3.5),
+    color: colors.text,
+    fontWeight: "500",
+    flex: 1, // Add this to ensure text wraps properly
+  },
+  filterBadge: {
+    backgroundColor: colors.primary,
+    borderRadius: responsive.wp(4),
+    minWidth: responsive.wp(5),
+    height: responsive.wp(5),
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: responsive.wp(1),
+  },
+  filterBadgeText: {
+    color: colors.surface,
+    fontSize: responsive.wp(3),
+    fontWeight: "600",
   },
   doctorList: {
     flex: 1,
@@ -349,7 +355,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
       },
       android: {
-        elevation: 2,
+        // elevation: 2,
       },
     }),
   },
@@ -383,5 +389,83 @@ const styles = StyleSheet.create({
     color: colors.primary,
     marginRight: responsive.wp(2),
     marginTop: responsive.hp(0.2),
+  },
+  filterModal: {
+    margin: 0,
+    justifyContent: "flex-end",
+  },
+  filterContent: {
+    backgroundColor: colors.surface,
+    borderTopLeftRadius: responsive.wp(4),
+    borderTopRightRadius: responsive.wp(4),
+    padding: responsive.wp(4),
+    paddingBottom: Platform.OS === "ios" ? responsive.hp(4) : responsive.hp(3),
+  },
+  filterHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: responsive.hp(3),
+    paddingBottom: responsive.hp(1.5),
+    borderBottomWidth: 1,
+    borderBottomColor: colors.background,
+  },
+  filterTitle: {
+    fontSize: responsive.wp(4.5),
+    fontWeight: "600",
+    color: colors.text,
+  },
+  filterSectionTitle: {
+    fontSize: responsive.wp(3.8),
+    fontWeight: "500",
+    color: colors.text,
+    marginBottom: responsive.hp(1.5),
+  },
+  optionsGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: responsive.wp(2),
+    marginBottom: responsive.hp(3),
+  },
+  optionChip: {
+    paddingVertical: responsive.hp(1),
+    paddingHorizontal: responsive.wp(3),
+    borderRadius: responsive.wp(2),
+    borderWidth: 1,
+    borderColor: colors.background,
+    backgroundColor: colors.background,
+  },
+  activeChip: {
+    backgroundColor: colors.primaryAlpha(0.1),
+    borderColor: colors.primary,
+  },
+  optionText: {
+    fontSize: responsive.wp(3.3),
+    color: colors.text,
+  },
+  activeOptionText: {
+    color: colors.primary,
+    fontWeight: "500",
+  },
+  applyButton: {
+    backgroundColor: colors.primary,
+    padding: responsive.hp(1.8),
+    borderRadius: responsive.wp(2),
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: responsive.hp(2),
+    shadowColor: colors.primary,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    // elevation: 5,
+  },
+  applyButtonText: {
+    color: colors.surface,
+    fontSize: responsive.wp(4),
+    fontWeight: "600",
   },
 });

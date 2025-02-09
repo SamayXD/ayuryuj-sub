@@ -11,6 +11,7 @@ import { Feather } from "@expo/vector-icons";
 
 import { responsive } from "../utils/basicUtils";
 import { colors } from "../utils/colors";
+import { router } from "expo-router";
 
 const HomeCard = ({ icon, title, subtitle, onPress }) => (
   <TouchableOpacity style={styles.card} onPress={onPress}>
@@ -87,7 +88,9 @@ const Home = ({ toggleSidebar }) => {
             icon="clipboard"
             title="Book Tests"
             subtitle="Book lab tests"
-            onPress={() => {}}
+            onPress={() => {
+              router.navigate("screens/BookTests");
+            }}
           />
           <HomeCard
             icon="calendar"
@@ -99,7 +102,9 @@ const Home = ({ toggleSidebar }) => {
             icon="file-text"
             title="Reports"
             subtitle="Check your reports"
-            onPress={() => {}}
+            onPress={() => {
+              router.navigate("screens/Reports");
+            }}
           />
         </View>
         <Image

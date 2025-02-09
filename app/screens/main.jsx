@@ -75,7 +75,7 @@ export default main;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    // backgroundColor: "white",
+    backgroundColor: "white",
   },
   container: {
     backgroundColor: "#f0f0f0",
