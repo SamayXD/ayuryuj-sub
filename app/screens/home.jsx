@@ -1,30 +1,28 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
-import { router } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  StyleSheet,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useState } from "react";
+import Sidebar from "../components/Sidebar";
 
-const home = () => {
+const Home = ({ toggleSidebar }) => {
   return (
-    <SafeAreaView>
-      <View
-        style={{
-          backgroundColor: "#f0f0f0",
-          height: "100%",
+    <View>
+      <Text>home screen</Text>
+      <TouchableOpacity
+        onPress={() => {
+          toggleSidebar();
         }}
       >
-        <Text>NEW HOME</Text>
-        <TouchableOpacity
-          onPress={() => {
-            router.back();
-          }}
-        >
-          <Text>TOUCH ME</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+        <Text>handleSidebarNav</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
-export default home;
+export default Home;
 
 const styles = StyleSheet.create({});

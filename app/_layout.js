@@ -13,7 +13,16 @@ const _layout = () => {
         <Stack.Screen name='index' options={{
           headerShown: false,
         }}/>
+        <Stack.Screen name='screens/main' options={{
+          headerShown: false
+        }}/>
         <Stack.Screen name='screens/home' options={{
+          headerShown: false
+        }}/>
+        <Stack.Screen name='screens/doctorListings' options={{
+          headerShown: false
+        }}/>
+        <Stack.Screen name='screens/settings' options={{
           headerShown: false
         }}/>
       </Stack>
