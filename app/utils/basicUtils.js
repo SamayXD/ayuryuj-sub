@@ -61,3 +61,7 @@ export const responsive = {
     return dimension * ratio;
   }
 };
+
+export default {
+  responsive
+};

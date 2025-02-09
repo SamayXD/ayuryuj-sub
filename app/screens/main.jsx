@@ -75,12 +75,14 @@ export default main;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    // backgroundColor: "white",
   },
   container: {
     backgroundColor: "#f0f0f0",
-    height: responsive.hp(100),
-    padding: responsive.wp(4),
-    paddingBottom: responsive.hp(15), // Add padding for bottom nav
+    // height: responsive.hp(100),
+    flex: 1,
+    // padding: responsive.wp(4),
+    // paddingBottom: responsive.hp(15), // Add padding for bottom nav
   },
   title: {
     fontSize: responsive.wp(6),

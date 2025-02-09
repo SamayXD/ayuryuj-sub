@@ -8,7 +8,7 @@ const navItems = [
   { id: 1, icon: "home", screen: "home", label: "Home" },
   { id: 2, icon: "briefcase", screen: "doctorListings", label: "Doctors" },
   { id: 3, icon: "user", screen: "profile", label: "Profile" },
-  { id: 4, icon: "settings", screen: "settings", label: "Settings" },
+  { id: 4, icon: "settings", screen: "settings", label: "Settingss" },
 ];
 
 const BottomNav = ({ onNavPress, activeScreen }) => {
