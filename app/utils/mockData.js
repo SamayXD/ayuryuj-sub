@@ -257,7 +257,8 @@ export const myReports = {
 
 export const myProfile = {
   id: "user123",
-  name: "Samay Negi",
+  name: "Samay N.",
+  wallet : 4000,
   age: 28,
   gender: "Male",
   bloodGroup: "B+",

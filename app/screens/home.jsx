@@ -59,7 +59,12 @@ const Home = ({ toggleSidebar }) => {
               color={colors.text}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.iconButton}>
+          <TouchableOpacity
+            style={styles.iconButton}
+            onPress={() => {
+              router.navigate("screens/Notifications");
+            }}
+          >
             <View>
               <Feather
                 name="bell"
@@ -82,7 +87,7 @@ const Home = ({ toggleSidebar }) => {
             icon="user"
             title="Consult Doctor"
             subtitle="Talk to a doctor now"
-            onPress={() => {}}
+            onPress={() => { }}
           />
           <HomeCard
             icon="clipboard"
@@ -146,7 +151,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: responsive.wp(4),
     paddingVertical: responsive.hp(2),
-    backgroundColor: "white",
+    backgroundColor: "#F5FBFB",
     borderBottomWidth: 1,
     borderBottomColor: colors.background,
   },

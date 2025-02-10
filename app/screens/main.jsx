@@ -10,6 +10,7 @@ import DoctorListings from "./DoctorListings";
 import Settings from "./Settings";
 import Profile from "./Profile";
 import BookTests from "./BookTests";
+import { StatusBar } from "expo-status-bar";
 
 const main = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -40,7 +41,9 @@ const main = () => {
       case "settings":
         return <Settings />;
       case "booktests":
-        return <BookTests />;
+        setActiveScreen("home");
+        // return <BookTests />;
+        router.navigate("screens/BookTests");
       default:
         return <Text style={styles.title}>Home Screen</Text>;
     }
@@ -48,6 +51,7 @@ const main = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle="dark-content" backgroundColor="#F5FBFB" />
       <View style={styles.container}>
         {renderScreen()}
         {/* <TouchableOpacity
@@ -75,10 +79,10 @@ export default main;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "#F5FBFB",
   },
   container: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#F5FBFB",
     // height: responsive.hp(100),
     flex: 1,
     // padding: responsive.wp(4),
