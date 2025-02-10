@@ -5,6 +5,7 @@ import { colors } from "../utils/colors";
 import { responsive } from "../utils/basicUtils";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Platform } from "react-native";
+import { router } from "expo-router";
 const NotificationItem = ({ type, title, message, time, read, onPress }) => (
   <TouchableOpacity
     style={[styles.notificationItem, !read && styles.unreadNotification]}
@@ -68,7 +69,26 @@ const Notifications = () => {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
-        <Text style={styles.title}>Notifications</Text>
+        <View style={{
+          flexDirection: "row"
+        }}>
+          <TouchableOpacity
+            style={{
+              paddingHorizontal: 10,
+            }}
+            onPress={() => {
+              router.back();
+            }}
+          >
+            <Feather
+              name="chevron-left"
+              size={responsive.wp(6)}
+              color={colors.text}
+            />
+          </TouchableOpacity>
+
+          <Text style={styles.title}>Notifications</Text>
+        </View>
         <TouchableOpacity
           style={styles.clearButton}
           onPress={() => console.log('Clear all')}
