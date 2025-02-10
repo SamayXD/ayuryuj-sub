@@ -4,10 +4,13 @@ export const colors = {
   surface: '#F5FBFB',    // Very Light Blue
   text: '#646971',       // Dark Gray
   accent: '#FF8769',     // Coral/Orange
+  error: '#FF4B4B',      // Red
+
 
   // Variations with opacity
   primaryAlpha: (opacity) => `rgba(30, 151, 191, ${opacity})`,
   accentAlpha: (opacity) => `rgba(255, 135, 105, ${opacity})`,
+  errorAlpha: (opacity) => `rgba(255, 75, 75, ${opacity})`, // Updated error alpha
 
   // Utility functions
   getColorWithOpacity: (hex, opacity) => {

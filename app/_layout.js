@@ -22,6 +22,9 @@ const _layout = () => {
         <Stack.Screen name='screens/BookTests' options={{
           headerShown: false
         }}/>
+        <Stack.Screen name='screens/Appointments' options={{
+          headerShown: false
+        }}/>
         {/* <Stack.Screen name='screens/home' options={{
           headerShown: false
         }}/>

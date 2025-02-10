@@ -96,7 +96,9 @@ const Home = ({ toggleSidebar }) => {
             icon="calendar"
             title="Appointments"
             subtitle="View your schedule"
-            onPress={() => {}}
+            onPress={() => {
+              router.navigate("screens/Appointments");
+            }}
           />
           <HomeCard
             icon="file-text"
