@@ -11,13 +11,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 
 const handleSplash = () => {
-  // router.navigate("/screens/main");
-  router.navigate("/screens/LoginPage");
+  // router.navigate("/screens/TestAs");
+  router.navigate("/screens/main");
+  // router.navigate("screens/LoginPage");
 };
 
 const index = () => {
   useEffect(() => {
-    const timer = setTimeout(handleSplash, 1000);
+    const timer = setTimeout(handleSplash, 1500);
     return () => {
       clearTimeout(timer);
     };

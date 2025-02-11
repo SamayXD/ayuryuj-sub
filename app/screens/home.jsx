@@ -79,7 +79,7 @@ const Home = ({ toggleSidebar }) => {
 
       {/* Content */}
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        <Text style={styles.greeting}>Hello, Samay 👋</Text>
+        <Text style={styles.greeting}>Hello, Samayy 👋</Text>
         <Text style={styles.subtitle}>How are you feeling today?</Text>
 
         <View style={styles.cardGrid}>

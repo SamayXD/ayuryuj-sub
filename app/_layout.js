@@ -35,11 +35,17 @@ const _layout = () => {
           }}
         />
         <Stack.Screen
-          name="screens/LoginPage"
+          name="screens/TestAs"
           options={{
             headerShown: false,
           }}
         />
+        {/* <Stack.Screen
+          name="screens/LoginPage"
+          options={{
+            headerShown: false,
+          }}
+        /> */}
         <Stack.Screen
           name="screens/main"
           options={{

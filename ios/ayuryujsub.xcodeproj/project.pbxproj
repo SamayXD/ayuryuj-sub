@@ -14,7 +14,7 @@
 		96905EF65AED1B983A6B3ABC /* libPods-ayuryujsub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-ayuryujsub.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		29B5317223DE4AA480E53AA7 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1009B3B02B405B826916B0 /* noop-file.swift */; };
+		881924AAB7D74A6CB1489A32 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7D772B4FA3472BB06F3AA6 /* noop-file.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ayuryujsub/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		CD1009B3B02B405B826916B0 /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "ayuryujsub/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		972A3648555F466C8EE332EB /* ayuryujsub-Bridging-Header.h */ = {isa = PBXFileReference; name = "ayuryujsub-Bridging-Header.h"; path = "ayuryujsub/ayuryujsub-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		7B7D772B4FA3472BB06F3AA6 /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "ayuryujsub/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		2BE8C1D8735347FAAFD6969B /* ayuryujsub-Bridging-Header.h */ = {isa = PBXFileReference; name = "ayuryujsub-Bridging-Header.h"; path = "ayuryujsub/ayuryujsub-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +57,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				CD1009B3B02B405B826916B0 /* noop-file.swift */,
-				972A3648555F466C8EE332EB /* ayuryujsub-Bridging-Header.h */,
+				7B7D772B4FA3472BB06F3AA6 /* noop-file.swift */,
+				2BE8C1D8735347FAAFD6969B /* ayuryujsub-Bridging-Header.h */,
 			);
 			name = ayuryujsub;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				E42A3A09D8FE4718BA7CC05B /* ayuryujsub-Bridging-Header.h in Resources */,
+				F323C8D3A3ED4F738CA8EDED /* ayuryujsub-Bridging-Header.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +274,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				29B5317223DE4AA480E53AA7 /* noop-file.swift in Sources */,
+				881924AAB7D74A6CB1489A32 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
